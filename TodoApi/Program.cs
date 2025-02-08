@@ -100,11 +100,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseCors("AllowAllOrigins");
 
@@ -144,7 +143,7 @@ app.MapDelete("/tasks/{id}", async (int id, ToDoDbContext db) =>
 
     return Results.NoContent(); // אם מחקנו בהצלחה
 });
-
+app.MapGet("/", () => "service is running");
 // הפעלת האפליקציה
 app.Run();
 
