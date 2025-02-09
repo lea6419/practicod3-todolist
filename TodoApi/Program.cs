@@ -83,9 +83,13 @@ using ToDoDbContext = TodoApi.ToDoDbContext;
 using Task = TodoApi.Task;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ToDoDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("sys"), 
-    new MySqlServerVersion(new System.Version(8, 0, 33))));
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDbContext<ToDoDbContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+}
+
+
 
 // הוספת CORS
 builder.Services.AddCors(options =>
@@ -100,11 +104,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 
     app.UseSwagger();
@@ -149,7 +152,10 @@ app.MapDelete("/tasks/{id}", async (int id, ToDoDbContext db) =>
 
     return Results.NoContent(); // אם מחקנו בהצלחה
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 051272e82158b623ec7ad4125f15056c700924b8
 app.MapGet("/", () => "service is running");
 // הפעלת האפליקציה
 app.Run();
