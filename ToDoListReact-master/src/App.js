@@ -76,21 +76,21 @@ function App() {
 }
 
 const styles = {
-  todoapp: { fontFamily: 'Arial, sans-serif', maxWidth: '400px', margin: '0 auto', textAlign: 'center' },
-  header: { padding: '20px', background: '#2c3e50', color: 'white', borderRadius: '5px' },
-  title: { margin: '0' },
-  addButton: { padding: '10px', background: '#3498db', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '5px' },
-  modal: { position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '20px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', borderRadius: '5px' },
+  todoapp: { fontFamily: 'Arial, sans-serif', maxWidth: '400px', margin: '0 auto', textAlign: 'center', background: '#f5f5f5', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)' },
+  header: { padding: '20px', background: '#34495e', color: 'white', borderRadius: '10px' },
+  title: { margin: '0', fontSize: '24px' },
+  addButton: { padding: '10px', background: '#1abc9c', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '5px', transition: 'background 0.3s', fontSize: '16px' },
+  modal: { position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '20px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)', borderRadius: '10px' },
   modalContent: { display: 'flex', flexDirection: 'column', gap: '10px' },
-  input: { padding: '10px', border: '1px solid #ddd', borderRadius: '5px' },
-  saveButton: { padding: '10px', background: '#27ae60', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '5px' },
-  closeButton: { padding: '10px', background: '#e74c3c', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '5px' },
+  input: { padding: '10px', border: '1px solid #ddd', borderRadius: '5px', fontSize: '16px' },
+  saveButton: { padding: '10px', background: '#2ecc71', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '5px', transition: 'background 0.3s' },
+  closeButton: { padding: '10px', background: '#e74c3c', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '5px', transition: 'background 0.3s' },
   main: { padding: '10px' },
   todoList: { listStyle: 'none', padding: '0' },
-  todoItem: { display: 'flex', justifyContent: 'space-between', padding: '10px', borderBottom: '1px solid #ddd' },
-  completed: { textDecoration: 'line-through', color: '#95a5a6' },
+  todoItem: { display: 'flex', justifyContent: 'space-between', padding: '10px', borderBottom: '1px solid #ddd', background: 'white', borderRadius: '5px', marginBottom: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' },
+  completed: { textDecoration: 'line-through', color: '#7f8c8d' },
   view: { display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' },
-  destroyButton: { background: 'none', border: 'none', cursor: 'pointer', color: '#e74c3c' }
+  destroyButton: { background: 'none', border: 'none', cursor: 'pointer', color: '#c0392b', fontSize: '16px' }
 };
 
 export default App;
