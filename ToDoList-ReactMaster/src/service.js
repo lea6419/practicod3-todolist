@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-<<<<<<< HEAD
-const apiUrl =process.env.REACT_APP_Api;
-=======
-const apiUrl = "process.env.REACT_APP_Api";
+const apiUrl = process.env.REACT_APP_API_URL;
+
 axios.defaults.baseURL = apiUrl;
 
 axios.interceptors.response.use(
@@ -13,7 +11,6 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
->>>>>>> 051272e82158b623ec7ad4125f15056c700924b8
 
 export default {
   getTasks: async () => {
