@@ -83,9 +83,13 @@ using ToDoDbContext = TodoApi.ToDoDbContext;
 using Task = TodoApi.Task;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ToDoDbContext>(options =>
-    options.UseMySql(builder.Configuration.GetConnectionString("sys"), 
-    new MySqlServerVersion(new System.Version(8, 0, 33))));
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDbContext<ToDoDbContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+}
+
+
 
 // הוספת CORS
 builder.Services.AddCors(options =>
